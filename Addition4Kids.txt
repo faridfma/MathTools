@@ -1,0 +1,105 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main()
+{
+    int r1 = 0;
+    int m1 = 0;
+    int r2 = 0;
+    int m2 = 0;
+    int r3 = 0;
+    int m3 = 0;
+    int a = 0;
+    int b = 0; 
+    int c = 0; 
+    
+    
+    
+    int Buffer[672] = {0};   //8*4*7*2
+
+    static int index =0;
+    int counter =0;
+    int temp = 0; 
+
+    srand(time(NULL));
+
+for( int iii = 0; iii< 7; iii++)   // 7 number of days
+{
+
+printf("Name:     Mabrouk\n\n");
+printf("Date:                            Start Time:     HR    MM  End Time:    HR    MM \n\n\n");
+
+for( int ii = 0; ii< 4 ; ii++)   // 4 number of pages per day
+{
+   for( int i = 0; i< 4 ; i++)    // 3*4 number of problems per page
+   {
+
+    counter++;
+    a = counter; 
+   // printf(" ( %d ) \n", counter);
+
+     do
+     {
+      r1 = rand() % (9 - 1 + 1) + 1;
+
+      m1 = rand() % (9 - 1 + 1) + 1;
+
+      temp = r1+m1; 
+     }while (temp >= 10);
+
+     counter++;
+     b = counter;
+    do
+    {
+      r2 = rand() % (9 - 1 + 1) + 1;;
+
+      m2 = rand() % (9 - 1 + 1) + 1;
+      
+     temp = r2+m2; 
+     }while (temp >= 10);
+     
+       do
+     {
+      r3 = rand() % (9 - 1 + 1) + 1;
+
+      m3 = rand() % (9 - 1 + 1) + 1;
+      
+        temp = r3+m3; 
+     }while (temp > 10);
+ 
+     
+     counter++;
+     c = counter;
+
+    printf(" ( %d )                    ( %d )                          ( %d ) \n\n", a, b, c );
+    
+    printf(" %d + %d =                   ", r1, m1); 
+    printf(" %d + %d =                   ", r2, m2);
+     printf(" %d + %d =                  ", r3, m3);
+    printf("\n");
+
+ 
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    
+   }
+    printf("\n\n\n\n");
+}
+}
+
+
+
+    return 0;
+}

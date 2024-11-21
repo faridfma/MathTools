@@ -1,0 +1,129 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main()
+{
+    int r1 = 0;
+    int m1 = 0;
+    int r2 = 0;
+    int m2 = 0;
+    int r3 = 0;
+    int m3 = 0;
+    int a = 0;
+    int b = 0; 
+    int c = 0; 
+    
+    
+    
+    int Buffer[672] = {0};   //8*4*7*2
+
+    static int index =0;
+    int counter =0;
+
+    srand(time(NULL));
+
+//for( int iii = 0; iii< 7; iii++)   // 7 number of days
+//{
+
+//
+printf("Date:                            Start Time: ---H ---MM  End Time: ---H ---MM \n\n\n");
+
+for( int ii = 0; ii< 4 ; ii++)   // 4 number of pages per day
+{
+   for( int i = 0; i< 4 ; i++)    // 3*4 number of problems per page
+   {
+
+    counter++;
+    a = counter; 
+   // printf(" ( %d ) \n", counter);
+
+     do
+     {
+      r1 = rand() % (99 - 10 + 1) + 10;
+
+      m1 = rand() % (999 - 100 + 1) + 100;
+     }while ((m1/10) < r1);
+
+     counter++;
+     b = counter; 
+     
+     do
+     {
+      r2 = rand() % (99 - 10 + 1) + 10;
+
+      m2 = rand() % (999 - 100 + 1) + 100;
+     }while ((m2/10) < r2);
+     
+     counter++;
+     c = counter; 
+     
+       do
+     {
+      r3 = rand() % (99 - 10 + 1) + 10;
+
+      m3 = rand() % (999 - 100 + 1) + 100;
+     }while ((m3/10) < r3);
+
+
+
+
+    printf(" ( %d )                    ( %d )                          ( %d ) \n", a, b, c );
+    printf("           ______________            ______________                     ______________ \n");
+    printf("         %d)%d                    %d)%d                             %d)%d\n", r1, m1, r2, m2, r3, m3);
+ 
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    //printf("\n");
+
+    //store values in a Buffer
+    Buffer[index] = r1;
+    index++;
+    Buffer[index] = m1;
+    index++;
+    Buffer[index] = r2;
+    index++;
+    Buffer[index] = m2;
+    index++;
+    Buffer[index] = r3;
+    index++;
+    Buffer[index] = m3;
+    index++;
+    
+   }
+    printf("\n\n\n");
+}
+//}
+
+// for( int j =0; j <448; j++)
+// {
+//      printf("%d\n", Buffer[j]);
+//     // j++;
+// }
+
+   counter=0;
+  for( int l = 0; l <672; l+=2)
+  {
+
+      counter++;
+      printf(" ( %d )", counter);
+      printf(" %d ", Buffer[l+1]/Buffer[l]);
+      printf(" R %d \n", Buffer[l+1]%Buffer[l]);
+  }
+
+
+
+    return 0;
+}
