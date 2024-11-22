@@ -19,7 +19,7 @@ class MultiplicationMathGUI:
         self.generate_button.pack(pady=10)
 
     def generate_and_save_problems(self):
-        """Generates random multiplication problems and saves them to a text file."""
+        """Generates random addition problems and saves them to a text file."""
         
         # Generate 48 multiplication problems (16 lines with 3 problems each)
         generated_problems = []
@@ -75,7 +75,7 @@ class MultiplicationMathGUI:
         # Open the file for writing
         with open(file_path, 'w') as file:
             # Write the header
-            file.write("Math Multiplication Problems\n\n\n\n")
+            file.write("Math Addition Problems\n\n\n\n")
 
             # Loop through the generated problems and add them to the text file
             for problem_set in generated_problems:
