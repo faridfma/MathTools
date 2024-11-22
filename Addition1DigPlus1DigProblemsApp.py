@@ -5,7 +5,7 @@ import random
 class MultiplicationMathGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Addition Math Problem Generator: 2 Digits Plus by 1 Digits")
+        self.root.title("Addition Math Problem Generator: 1 Digits Plus by 1 Digits")
         
         # Set up window size
         self.root.geometry("600x250")
