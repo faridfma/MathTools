@@ -43,8 +43,8 @@ class MultiplicationMathGUI:
             # Format the problem set for the three problems
             problem_numbers_line = f"({problem_counter})".rjust(6) + f"({problem_counter+1})".rjust(30) + f"({problem_counter+2})".rjust(30)
             multiplicand_line = f"{multiplicand1}".rjust(13) + f"{multiplicand2}".rjust(31) + f"{multiplicand3}".rjust(29)
-            x_line = " x".rjust(11) + " " + " x".rjust(30) + " " + " x".rjust(28)
-            multiplier_line = f"{multiplier1}".rjust(12) + f"{multiplier2}".rjust(31) + f"{multiplier3}".rjust(29)
+            # Corrected multiplier_line without x_line, as it's unnecessary now
+            multiplier_line = f"x {multiplier1}".rjust(13) + f"x {multiplier2}".rjust(31) + f"x {multiplier3}".rjust(29)
             
             # Store the solution for the three problems
             solutions.append(f"({problem_counter}) {product1}")
@@ -58,7 +58,7 @@ class MultiplicationMathGUI:
             
             # Add the formatted problems and the underline to the list
             generated_problems.append((
-                problem_numbers_line, multiplicand_line, x_line, multiplier_line, underline
+                problem_numbers_line, multiplicand_line, multiplier_line, underline
             ))
 
         # Ask the user for the file location and name
@@ -78,12 +78,11 @@ class MultiplicationMathGUI:
             # Loop through the generated problems and add them to the text file
             for problem_set in generated_problems:
                 # Unpack the problem set into individual components
-                problem_numbers_line, multiplicand_line, x_line, multiplier_line, underline = problem_set
+                problem_numbers_line, multiplicand_line, multiplier_line, underline = problem_set
 
                 # Write the three unique problems for this row
                 file.write(f"{problem_numbers_line}\n")
                 file.write(f"{multiplicand_line}\n")
-                file.write(f"{x_line}\n")
                 file.write(f"{multiplier_line}\n")
                 
                 # Add the result line with underscores
