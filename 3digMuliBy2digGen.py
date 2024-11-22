@@ -44,17 +44,17 @@ class MultiplicationMathGUI:
             problem_numbers_line = f"({problem_counter})".rjust(6) + f"({problem_counter+1})".rjust(30) + f"({problem_counter+2})".rjust(30)
             multiplicand_line = f"{multiplicand1}".rjust(13) + f"{multiplicand2}".rjust(31) + f"{multiplicand3}".rjust(29)
             # Corrected multiplier_line without x_line, as it's unnecessary now
-            multiplier_line = f"x {multiplier1}".rjust(13) + f"x {multiplier2}".rjust(31) + f"x {multiplier3}".rjust(29)
+            multiplier_line = f" x{multiplier1}".rjust(13) + f" x{multiplier2}".rjust(31) + f" x{multiplier3}".rjust(29)
             
             # Store the solution for the three problems
             solutions.append(f"({problem_counter}) {product1}")
             solutions.append(f"({problem_counter+1}) {product2}")
-            solutions.append(f"({problem_counter+2}) {product3}")
+            solutions.append(f"({problem_counter+2}) {product3}")     
             
             problem_counter += 3  # Increment by 3 for each new problem
 
             # Add the result line with underscores after the multiplication
-            underline = "______________".rjust(24) + " " + "______________".rjust(30) + " " + "______________".rjust(28)
+            underline = "______________".rjust(24) + " " + "______________".rjust(30) + " " + "______________".rjust(28) 
             
             # Add the formatted problems and the underline to the list
             generated_problems.append((
